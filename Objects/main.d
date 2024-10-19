@@ -39,3 +39,5 @@
 .\objects\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: .\Hardware\Usart_1.h
+.\objects\main.o: .\Hardware\Usart_2.h
+.\objects\main.o: .\Hardware\ESP8266.h

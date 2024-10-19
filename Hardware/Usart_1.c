@@ -107,10 +107,6 @@ void Usart1_SendNumber(uint32_t Number, uint8_t Length)
 	}
 }
 
-
-
-
-
 /*-------------------------------------------------*/
 /*函数名：串口1发送缓冲区中的数据                    */
 /*参  数：data：数据                                */
@@ -127,6 +123,19 @@ void u1_TxData(unsigned char *data)
 	}
 }
 
+/**
+  * 函    数：串口发送一个字符串
+  * 参    数：String 要发送字符串的首地址
+  * 返 回 值：无
+  */
+void Usart1_SendString(char *String)
+{
+	uint8_t i;
+	for (i = 0; String[i] != '\0'; i ++)//遍历字符数组（字符串），遇到字符串结束标志位后停止
+	{
+		Usart1_SendByte(String[i]);		//依次调用Serial_SendByte发送每个字节数据
+	}
+}
 
 
 /*-------------------------------------------------*/

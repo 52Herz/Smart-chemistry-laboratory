@@ -4,6 +4,8 @@
 #include "Sht_20.h"
 #include "I2c.h"
 #include "Usart_1.h"
+#include "Usart_2.h"
+#include "ESP8266.h"
 #include "string.h"
 
 
@@ -15,10 +17,14 @@ float ppm;
 
 int main(void)
 {
-    MQ2_Init();
+  
 		IIC_Init();
     Usart1_Init(115200);
-    
+    Usart2_Init(115200);
+
+    MQ2_Init();
+    ESP8266_Init();
+
     Usart1_printf("Start \r\n");
 		Delay_ms(1000);
 
@@ -34,7 +40,7 @@ int main(void)
 		Usart1_printf("%.2fppm\r\n",ppm);
 		
     SHT20_GetValue();
-    Usart1_printf("湿度：%0.1f%%\r\n",sht20_info.humidity-10);
+    Usart1_printf("湿度：%0.1f%%\r\n",sht20_info.humidity);
     Usart1_printf("温度：%0.2f℃\r\n",sht20_info.tempreture);
 
 		

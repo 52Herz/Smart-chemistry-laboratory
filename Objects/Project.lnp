@@ -35,6 +35,7 @@
 ".\objects\sht_20.o"
 ".\objects\adcx.o"
 ".\objects\mq_2.o"
+".\objects\esp8266.o"
 ".\objects\main.o"
 ".\objects\stm32f10x_it.o"
 --library_type=microlib --strict --scatter ".\Objects\Project.sct"
