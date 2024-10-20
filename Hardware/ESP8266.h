@@ -1,23 +1,23 @@
-#ifndef _ESP8266_H_
-#define _ESP8266_H_
+//#ifndef _ESP8266_H_
+//#define _ESP8266_H_
 
 
-#define REV_OK		0	//接收完成标志
-#define REV_WAIT	1	//接收未完成标志
+//#define REV_OK		0	//接收完成标志
+//#define REV_WAIT	1	//接收未完成标志
 
-#define USART_DEBUG Usart1_printf
-#define USART_WIFI Usart2_printf
+//#define USART_DEBUG Usart1_printf
+//#define USART_WIFI Usart2_printf
 
-#define ESP8266_GPIO_RST GPIOA
-#define ESP8266_PIN_RST GPIO_Pin_4
+//#define ESP8266_GPIO_RST GPIOA
+//#define ESP8266_PIN_RST GPIO_Pin_4
 
-void ESP8266_Init(void);
+//void ESP8266_Init(void);
 
-void ESP8266_Clear(void);
+//void ESP8266_Clear(void);
 
-void ESP8266_SendData(unsigned char *data, unsigned short len);
+//void ESP8266_SendData(unsigned char *data, unsigned short len);
 
-unsigned char *ESP8266_GetIPD(unsigned short timeOut);
+//unsigned char *ESP8266_GetIPD(unsigned short timeOut);
 
 
-#endif
+//#endif

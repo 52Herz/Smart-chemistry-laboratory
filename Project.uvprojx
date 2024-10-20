@@ -774,6 +774,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\ESP8266.h</FilePath>
             </File>
+            <File>
+              <FileName>Wifi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Wifi.c</FilePath>
+            </File>
+            <File>
+              <FileName>Wifi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\Wifi.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

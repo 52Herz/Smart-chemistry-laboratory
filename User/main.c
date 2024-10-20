@@ -5,7 +5,7 @@
 #include "I2c.h"
 #include "Usart_1.h"
 #include "Usart_2.h"
-#include "ESP8266.h"
+#include "Wifi.h"
 #include "string.h"
 
 
@@ -21,27 +21,27 @@ int main(void)
 		IIC_Init();
     Usart1_Init(115200);
     Usart2_Init(115200);
-
+		
     MQ2_Init();
-    ESP8266_Init();
+    WiFi_ResetIO_Init();
 
     Usart1_printf("Start \r\n");
 		Delay_ms(1000);
-
+		while(WiFi_Connect_IoTServer() != 0){}
+    Usart1_printf("wifi_OK");
     while (1)
     {
-        
-		value = MQ2_GetData();  
+			value = MQ2_GetData();  
 		
-		Usart1_printf("烟雾浓度: %d\r\n",value);
-		//OLED_ShowNum(80,0,value,4,16,1);
+			Usart1_printf("烟雾浓度: %d\r\n",value);
+			//OLED_ShowNum(80,0,value,4,16,1);
 		
-		ppm = MQ2_GetData_PPM();
-		Usart1_printf("%.2fppm\r\n",ppm);
+			ppm = MQ2_GetData_PPM();
+			Usart1_printf("%.2fppm\r\n",ppm);
 		
-    SHT20_GetValue();
-    Usart1_printf("湿度：%0.1f%%\r\n",sht20_info.humidity);
-    Usart1_printf("温度：%0.2f℃\r\n",sht20_info.tempreture);
+			SHT20_GetValue();
+			Usart1_printf("湿度：%0.1f%%\r\n",sht20_info.humidity);
+			Usart1_printf("温度：%0.2f℃\r\n",sht20_info.tempreture);
 
 		
 		//OLED_ShowString(48,16,buff,16,1);

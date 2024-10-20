@@ -14,17 +14,17 @@ void Usart2_Init(unsigned int bound)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);    //设置中断向量分组：第2组 抢先优先级：0 1 2 3 子优先级：0 1 2 3	
       
 	
-	RCC_APB2PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE); //使能串口2时钟
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE); //使能串口2时钟
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);  //使能USART2_GPIO时钟
 	USART_DeInit(USART2);                                  //串口2寄存器重新设置为默认值
     GPIO_InitStructure.GPIO_Pin = USART2_PIN_TX;              //准备设置PA2
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;      //IO速率50M
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	       //复用推挽输出，用于串口2的发送
-    GPIO_Init(USART2_GPIO, &GPIO_InitStructure);                 //设置PA3
+    GPIO_Init(USART2_GPIO, &GPIO_InitStructure);                 //设置PA2
       
     GPIO_InitStructure.GPIO_Pin = USART2_PIN_RX;              //准备设置PA3
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;  //浮空输入，用于串口2的接收
-    GPIO_Init(USART2_GPIO, &GPIO_InitStructure);                 //设置PA10
+    GPIO_Init(USART2_GPIO, &GPIO_InitStructure);                 //设置PA3
 	
 	USART_InitStructure.USART_BaudRate = bound;                                    //波特率设置
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;                    //8个数据位
@@ -105,11 +105,11 @@ void Usart2_SendNumber(uint32_t Number, uint8_t Length)
 void u2_TxData(unsigned char *data)
 {
 	int	i;	
-	while((USART1->SR&0X40) == 0);
+	while((USART2->SR&0X40) == 0);
 	for(i = 1; i <= (data[0] * 256 + data[1]); i++)
 	{			
-		USART1->DR = data[i+1];
-		while((USART1->SR&0X40) == 0);	
+		USART2->DR = data[i+1];
+		while((USART2->SR&0X40) == 0);	
 	}
 }
 
@@ -181,3 +181,5 @@ void Usart2_printf(char* fmt, ...)
 		while((USART2->SR&0X40) == 0);	
 	}	
 }
+
+
