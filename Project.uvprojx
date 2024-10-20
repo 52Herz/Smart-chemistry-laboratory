@@ -784,6 +784,26 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\Wifi.h</FilePath>
             </File>
+            <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\cJSON.c</FilePath>
+            </File>
+            <File>
+              <FileName>cJSON.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\cJSON.h</FilePath>
+            </File>
+            <File>
+              <FileName>Json_transmit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Json_transmit.c</FilePath>
+            </File>
+            <File>
+              <FileName>Json_transmit.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\Json_transmit.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -41,3 +41,4 @@
 .\objects\main.o: .\Hardware\Usart_1.h
 .\objects\main.o: .\Hardware\Usart_2.h
 .\objects\main.o: .\Hardware\Wifi.h
+.\objects\main.o: .\Hardware\Json_transmit.h

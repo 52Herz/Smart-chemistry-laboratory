@@ -37,6 +37,8 @@
 ".\objects\mq_2.o"
 ".\objects\esp8266.o"
 ".\objects\wifi.o"
+".\objects\cjson.o"
+".\objects\json_transmit.o"
 ".\objects\main.o"
 ".\objects\stm32f10x_it.o"
 --library_type=microlib --strict --scatter ".\Objects\Project.sct"
