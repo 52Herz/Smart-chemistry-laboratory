@@ -47,8 +47,6 @@ _Bool WiFi_SendCmd(char *cmd,int timeout)
         Delay_ms(100);     
         if(strstr(WIFI_RX_BUF,"OK"))
             break;
-				if(strstr(WIFI_RX_BUF,"ready"))
-            break;
         DEBUG_Printf("%d ", timeout);
 				
 
@@ -207,7 +205,7 @@ char WiFi_Connect_IoTServer(void)
 	
 	/******复位模块暂时有问题，暂时更改*******/
 	Usart2_printf("AT+RST\r\n");
-	Delay_ms(500);
+	Delay_ms(1000);
 	DEBUG_Printf("复位成功\r\n");
 	
 	DEBUG_Printf("准备设置STA模式\r\n");                //串口提示数据

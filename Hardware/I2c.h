@@ -7,13 +7,12 @@
 
 #define IIC_Err		1
 
-#define I2C_PIN_SDA GPIO_Pin_6
-#define I2C_PIN_SCL GPIO_Pin_7
+#define I2C_PIN_SDA GPIO_Pin_7
+#define I2C_PIN_SCL GPIO_Pin_6
 
 
-//SDA		PB11 ?PB6
-//SCL		PB10 ?PB7
-
+//SDA		PB11 ¸ÄPB7
+//SCL		PB10 ¸ÄPB6
 #define SDA_H	GPIO_SetBits(GPIOB, I2C_PIN_SDA)
 #define SDA_L	GPIO_ResetBits(GPIOB, I2C_PIN_SDA)
 #define SDA_R	GPIO_ReadInputDataBit(GPIOB, I2C_PIN_SDA)

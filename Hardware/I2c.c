@@ -153,7 +153,6 @@ _Bool IIC_WaitAck(unsigned int timeOut)
 	{
 		if(--timeOut == 0)
 		{
-			// UsartPrintf(USART1, "WaitAck TimeOut\r\n");
        DEBUG_Printf("WaitAck TimeOut\r\n");
 
 			IIC_Stop();						//超时未收到应答，则停止总线

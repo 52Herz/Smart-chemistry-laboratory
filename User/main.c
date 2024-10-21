@@ -23,7 +23,7 @@ SensorData sensor_data;
 int main(void)
 {
   
-	IIC_Init();
+		IIC_Init();
     Usart1_Init(115200);
     Usart2_Init(115200);
 		
@@ -31,9 +31,9 @@ int main(void)
     WiFi_ResetIO_Init();
 
     Usart1_printf("Start \r\n");
-	Delay_ms(1000);
-	while(WiFi_Connect_IoTServer() != 0){}
-    Usart1_printf("wifi_OK");
+		Delay_ms(1000);
+		while(WiFi_Connect_IoTServer() != 0){}
+		Usart1_printf("wifi_OK\r\n");
     while (1)
     {
 			value = MQ2_GetData();  
@@ -50,10 +50,7 @@ int main(void)
 			sensor_data.humidity = sht20_info.humidity;
 			sensor_data.MQ2_ppm = ppm;
 			Sensor_Json_Data(sensor_data);
-		
-		//OLED_ShowString(48,16,buff,16,1);
-			
-		
+
         Delay_ms(3000); //3秒发送一轮
     }
     

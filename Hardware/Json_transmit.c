@@ -20,8 +20,9 @@ void Sensor_Json_Data(SensorData data)
     
     // 向JSON对象中添加键值对
     cJSON_AddNumberToObject(json_data, "temperature", data.temperature);
-    cJSON_AddNumberToObject(json_data, "humidity", data.temperature);
+    cJSON_AddNumberToObject(json_data, "humidity", data.humidity);
     cJSON_AddNumberToObject(json_data, "MQ2", data.MQ2_ppm);
+		
     
     // 定义静态缓冲区用于存储JSON字符串
     char json_string[MAX_JSON_BUFFER_SIZE] = {0};
@@ -44,8 +45,8 @@ void Sensor_Json_Data(SensorData data)
     }
 
     // 打印JSON字符串（调试用）
-    DEBUG_Printf("JSON Data: %s\n", json_string);
-    Usart2_printf("JSON Data: %s\n", json_string);
+    DEBUG_Printf("JSON Data: %s\r\n", json_string);
+    Usart2_printf("JSON Data: %s\r\n", json_string);
 
     // 释放JSON对象和生成的字符串内存
     cJSON_Delete(json_data);
