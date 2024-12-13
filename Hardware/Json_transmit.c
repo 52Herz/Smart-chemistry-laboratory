@@ -1,3 +1,13 @@
+/*
+ * @Author       : 52Herz 1065021993@qq.com
+ * @Date         : 2024-10-20 20:13:21
+ * @LastEditors  : 52Herz 1065021993@qq.com
+ * @LastEditTime : 2024-12-13 13:31:41
+ * @FilePath     : \智慧化工实验室\Hardware\Json_transmit.c
+ * @Description  : 
+ * 
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 
+ */
 #include "cJSON.h"
 #include "Json_transmit.h"
 #include "Usart_1.h"
