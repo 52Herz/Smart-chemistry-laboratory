@@ -3,6 +3,10 @@
 
 #include <stdio.h>
 
+//宏定义
+#define USART1_PIN_TX GPIO_Pin_9
+#define USART1_PIN_RX GPIO_Pin_10
+
 extern char Serial_RxPacket[];
 extern uint8_t Serial_RxFlag;
 

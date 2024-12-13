@@ -1,6 +1,9 @@
 #ifndef __OLED_H
 #define __OLED_H
 
+#define OLED_PIN_SCL GPIO_Pin_14
+#define OLED_PIN_SDA GPIO_Pin_15
+
 void OLED_Init(void);
 void OLED_Clear(void);
 void OLED_ShowChar(uint8_t Line, uint8_t Column, char Char);

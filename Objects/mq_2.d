@@ -1,5 +1,6 @@
 .\objects\mq_2.o: Hardware\MQ_2.c
 .\objects\mq_2.o: Hardware\MQ_2.h
+.\objects\mq_2.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\mq_2.o: .\Start\stm32f10x.h
 .\objects\mq_2.o: .\Start\core_cm3.h
 .\objects\mq_2.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -31,4 +32,3 @@
 .\objects\mq_2.o: .\Library\misc.h
 .\objects\mq_2.o: Hardware\Adcx.h
 .\objects\mq_2.o: .\System\Delay.h
-.\objects\mq_2.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h

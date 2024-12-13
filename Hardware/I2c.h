@@ -3,25 +3,23 @@
 
 #include "Usart_1.h"
 
-#define IIC_OK		0
+#define IIC_OK 0
 
-#define IIC_Err		1
+#define IIC_Err 1
 
 #define I2C_PIN_SDA GPIO_Pin_7
 #define I2C_PIN_SCL GPIO_Pin_6
 
+// SDA		PB11 ï¿½ï¿½PB7
+// SCL		PB10 ï¿½ï¿½PB6
+#define SDA_H GPIO_SetBits(GPIOB, I2C_PIN_SDA)
+#define SDA_L GPIO_ResetBits(GPIOB, I2C_PIN_SDA)
+#define SDA_R GPIO_ReadInputDataBit(GPIOB, I2C_PIN_SDA)
 
-//SDA		PB11 ¸ÄPB7
-//SCL		PB10 ¸ÄPB6
-#define SDA_H	GPIO_SetBits(GPIOB, I2C_PIN_SDA)
-#define SDA_L	GPIO_ResetBits(GPIOB, I2C_PIN_SDA)
-#define SDA_R	GPIO_ReadInputDataBit(GPIOB, I2C_PIN_SDA)
-
-#define SCL_H	GPIO_SetBits(GPIOB, I2C_PIN_SCL)
-#define SCL_L	GPIO_ResetBits(GPIOB, I2C_PIN_SCL)
+#define SCL_H GPIO_SetBits(GPIOB, I2C_PIN_SCL)
+#define SCL_L GPIO_ResetBits(GPIOB, I2C_PIN_SCL)
 
 #define DEBUG_Printf Usart1_printf
-
 
 typedef struct
 {
@@ -31,7 +29,6 @@ typedef struct
 } IIC_INFO;
 
 extern IIC_INFO iic_info;
-
 
 void IIC_Init(void);
 
@@ -58,6 +55,5 @@ void IIC_NAck(void);
 void IIC_SendByte(unsigned char byte);
 
 unsigned char IIC_RecvByte(void);
-
 
 #endif

@@ -3,7 +3,8 @@
         "c_test3": "c",
         "stdio.h": "c",
         "usart_1.h": "c",
-        "usart_2.h": "c"
+        "usart_2.h": "c",
+        "stm32f10x.h": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "enabled"
 }

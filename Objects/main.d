@@ -30,8 +30,8 @@
 .\objects\main.o: .\Library\misc.h
 .\objects\main.o: .\System\Delay.h
 .\objects\main.o: .\Hardware\MQ_2.h
-.\objects\main.o: .\Hardware\Adcx.h
 .\objects\main.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\main.o: .\Hardware\Adcx.h
 .\objects\main.o: .\Hardware\Sht_20.h
 .\objects\main.o: .\Hardware\I2c.h
 .\objects\main.o: .\Hardware\Usart_1.h
@@ -42,3 +42,5 @@
 .\objects\main.o: .\Hardware\Usart_2.h
 .\objects\main.o: .\Hardware\Wifi.h
 .\objects\main.o: .\Hardware\Json_transmit.h
+.\objects\main.o: .\Hardware\LED.h
+.\objects\main.o: .\Hardware\OLED.h

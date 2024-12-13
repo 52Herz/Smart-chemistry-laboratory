@@ -91,7 +91,7 @@ unsigned char  SHT20_read_user_reg(void)
 char SHT2x_CheckCrc(char data[], char nbrOfBytes, char checksum)
 {
 	
-    char crc = 0;
+    char crc = 0;  //crc校验值
     char bit = 0;
     char byteCtr = 0;
 	

@@ -7,13 +7,12 @@ char Usart2_RxBuff[USART2_RXBUFF_SIZE]; //定义一个数组，用于保存串�
 
 void Usart2_Init(unsigned int bound)
 {  	 	
-    GPIO_InitTypeDef GPIO_InitStructure;     //定义一个设置GPIO功能的变量
+	GPIO_InitTypeDef GPIO_InitStructure;     //定义一个设置GPIO功能的变量
 	USART_InitTypeDef USART_InitStructure;   //定义一个设置串口功能的变量
 	NVIC_InitTypeDef NVIC_InitStructure;     //如果使能接收功能，定义一个设置中断的变量
 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);    //设置中断向量分组：第2组 抢先优先级：0 1 2 3 子优先级：0 1 2 3	
-      
-	
+
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE); //使能串口2时钟
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);  //使能USART2_GPIO时钟
 	USART_DeInit(USART2);                                  //串口2寄存器重新设置为默认值
@@ -33,13 +32,13 @@ void Usart2_Init(unsigned int bound)
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//无硬件数据流控制
 	USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;	               //收发模式
       
-  USART_Init(USART2, &USART_InitStructure);                                      //设置串口2	
+ 	USART_Init(USART2, &USART_InitStructure);                                      //设置串口2	
 
 	USART_ClearFlag(USART2, USART_FLAG_RXNE);	              //清除接收标志位
 	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);            //开启接收中断
     NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;         //设置串口2中断
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0; //抢占优先级0
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		  //子优先级0
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;		  //子优先级0
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			  //中断通道使能
 	NVIC_Init(&NVIC_InitStructure);	                          //设置串口2中断 
 

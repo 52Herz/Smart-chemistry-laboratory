@@ -16,7 +16,7 @@
 
 
 #define USART2_TXBUFF_SIZE 1024
-#define USART2_RXBUFF_SIZE 2048
+#define USART2_RXBUFF_SIZE 3072
 	
 extern char Usart2_RxCompleted ;               //外部声明，其他文件可以调用该变量
 extern unsigned int Usart2_RxCounter;          //外部声明，其他文件可以调用该变量
